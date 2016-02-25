@@ -260,3 +260,9 @@ a {
 .scrolloff {
   pointer-events: none;
 }
+.travel {
+  width: 250px;
+  margin: 20px 0 10px 20px;
+  display: inline-block;
+  vertical-align: top
+}
