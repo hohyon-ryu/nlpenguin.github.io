@@ -266,3 +266,6 @@ a {
   display: inline-block;
   vertical-align: top
 }
+#contents {
+  text-align:center;
+}
