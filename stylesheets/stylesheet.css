@@ -235,7 +235,8 @@ a {
   font-weight: bold; }
 
 .site-footer-credits {
-  color: #819198; }
+  font-size:0.8rem;
+  color: #eee;}
 
 @media screen and (min-width: 64em) {
   .site-footer {
