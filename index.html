@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Airbnb-0222 by will-ryu</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <script src="https://code.jquery.com/jquery-git2.min.js"></script>
-  </head>
-  <script>
-    var map;
-    function initMap() {
-      var airbnb = { lat: 37.7717415, lng: -122.4074766 };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 3,
-        center: airbnb
-      });
+<head>
+  <meta charset="UTF-8">
+  <title>Airbnb-0222 by will-ryu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <script src="https://code.jquery.com/jquery-git2.min.js"></script>
+</head>
+<script>
+  var map;
+  function initMap() {
+    var airbnb = {lat: 37.7717415, lng: -122.4074766};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 3,
+      center: airbnb
+    });
 
-      var imagePath = "images/profile/64x64/";
-      var markers = [];
-      var infoWindow = [];
-      $.ajax({
-        url:"resources/data.json",
-        dataType:"json",
-        success:function(data) {
-          for(var i=0;i<data.length;i++) {
-            var profile = imagePath + data[i].Name + ".png";
-            var place = "images/place/" + data[i].Name + ".jpg"
-	    var pos = {lat:data[i].Lat,lng:data[i].Lng};
-            markers[i] = new google.maps.Marker({
-              position: pos,
-              map: map,
-              icon: profile,
-              id: i
-            });
-            markers[i].addListener('click', function(){
-              var marker = markers[this.id];
-              marker.setAnimation(google.maps.Animation.BOUNCE);
-              setTimeout(function(){ marker.setAnimation(null); }, 2250);
-            });
+    var imagePath = "images/profile/64x64/";
+    var markers = [];
+    var infoWindow = [];
+    $.ajax({
+      url: "resources/data.json",
+      dataType: "json",
+      success: function (data) {
+        for (var i = 0; i < data.length; i++) {
+          var profile = imagePath + data[i].Name + ".png";
+          var place = "images/place/" + data[i].Name + ".jpg"
+          var pos = {lat: data[i].Lat, lng: data[i].Lng};
+          markers[i] = new google.maps.Marker({
+            position: pos,
+            map: map,
+            icon: profile,
+            id: i
+          });
+          markers[i].addListener('click', function () {
+            var marker = markers[this.id];
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(function () {
+              marker.setAnimation(null);
+            }, 2250);
+          });
 
-            infoWindow[i] = new google.maps.InfoWindow({
-              content :
-		'<div style="width: 400px; margin: 20px 0 10px 20px;">' +
-                  '<div>' +
-                    '<img src="' + place + 'style="width: 100%;"' +
-		  '</div>' +
-                  '<div id="name_headline" style="color: #82888a;">' +
-	             data[i].Name +
-                  "</div>" +
-                  '<div id="location">' + 
-                    data[i].Location + 
-                  "</div>" + 
-                  '<div id="description" style="color: #565a5c;">' + 
-                     data[i].Description + 
-                  "</div>" + 
-                "</div>",
-		maxWidth : 280,
-                maxHeight : 243,
-            });
+          infoWindow[i] = new google.maps.InfoWindow({
+            content: '<div style="width: 400px; margin: 20px 0 10px 20px;">' +
+            '<div>' +
+            '<img src="' + place + 'style="width: 100%;"' +
+            '</div>' +
+            '<div id="name_headline" style="color: #82888a;">' +
+            data[i].Name +
+            "</div>" +
+            '<div id="location">' +
+            data[i].Location +
+            "</div>" +
+            '<div id="description" style="color: #565a5c;">' +
+            data[i].Description +
+            "</div>" +
+            "</div>",
+            maxWidth: 280,
+            maxHeight: 243,
+          });
 
-            google.maps.event.addListener(markers[i], 'click', function () {
-              // Close all info windows before opening a new one.
-              for (var idx = 0; idx < infoWindow.length; idx++) {
-                infoWindow[idx].close();
-              }
-              infoWindow[this.id].open(map, markers[this.id]);
-            });
+          google.maps.event.addListener(markers[i], 'click', function () {
+            // Close all info windows before opening a new one.
+            for (var idx = 0; idx < infoWindow.length; idx++) {
+              infoWindow[idx].close();
+            }
+            infoWindow[this.id].open(map, markers[this.id]);
+          });
         }
       }
     });
@@ -89,26 +90,27 @@
       $('#map').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
     });
   });
-  </script>
-  <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABG80SflOUni_QkK41Yxqd0p43BQKmNXE&callback=initMap">
-  </script>
-  <body>
-    <section class="page-header">
-      <img class="belo" src="images/airbnb_vertical_lockup_white.png">
-      <h1 class="project-name">Belong Anywhere...</h1>
-      <BR>
-      <img src="images/group_photo.jpg" width=""><BR>
-      <h2 class="project-tagline">The 42 new hires of 2.22.16 share the places where they most belong.</h2>
-    </section>
-    <div class="container" style="margin:0px 0px;">
-      <div id="map" style="height:700px;"></div>
-    </div>
-    <section class="site-footer">
-      <div class="site-footer-credits">
-        <B>2/22 New-hire Challenge Team</B><BR>
-        Amanda Vawter | Ankit Argawal | Chase Munson | Jeremy Huang | John Bodley | Logan ury | Phil Nachum | Ram Sundarkumar | Will Ryu
-      </div>
-    </section>
-  </body>
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABG80SflOUni_QkK41Yxqd0p43BQKmNXE&callback=initMap">
+</script>
+<body>
+<section class="page-header">
+  <img class="belo" src="images/airbnb_vertical_lockup_white.png">
+  <h1 class="project-name">Belong Anywhere...</h1>
+  <BR>
+  <img src="images/group_photo.jpg" width=""><BR>
+  <h2 class="project-tagline">The 42 new hires of 2.22.16 share the places where they most belong.</h2>
+</section>
+<div class="container" style="margin:0px 0px;">
+  <div id="map" style="height:700px;"></div>
+</div>
+<section class="site-footer">
+  <div class="site-footer-credits">
+    <B>2/22 New-hire Challenge Team</B><BR>
+    Amanda Vawter | Ankit Argawal | Chase Munson | Jeremy Huang | John Bodley | Logan ury | Phil Nachum | Ram
+    Sundarkumar | Will Ryu
+  </div>
+</section>
+</body>
 </html>
