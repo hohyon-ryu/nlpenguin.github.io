@@ -234,6 +234,9 @@ a {
   padding-bottom: 1rem;
   border-top: solid 1px #eff0f1; }
 
+.site-footer a {
+  color: #eee;
+}
 .site-footer-owner {
   display: block;
   font-weight: bold; }
