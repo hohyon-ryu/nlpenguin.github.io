@@ -44,7 +44,7 @@
 
             infoWindow[i] = new google.maps.InfoWindow({
               content :
-		'<div style="width: 400px; margin: 20px 0 10px 20px;">'
+		'<div style="width: 400px; margin: 20px 0 10px 20px;">' + 
                   '<div>' + 
                     '<img src="' + place + 'style="width: 100%;"' + 
 		  '</div>' + 
@@ -57,7 +57,7 @@
                   '<div id="description" style="color: #565a5c;">' + 
                      data[i].Description + 
                   "</div>" + 
-                '</div>
+                "</div>",
 		maxWidth : 280,
                 maxHeight : 243,
             });
