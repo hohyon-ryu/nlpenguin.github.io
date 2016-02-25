@@ -38,7 +38,7 @@
             markers[i].addListener('click', function(){
               var marker = markers[this.id];
               marker.setAnimation(google.maps.Animation.BOUNCE);
-              setTimeout(function(){ marker.setAnimation(null); }, 2500);
+              setTimeout(function(){ marker.setAnimation(null); }, 2250);
             });
 
             infoWindow[i] = new google.maps.InfoWindow({
