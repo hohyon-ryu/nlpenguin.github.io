@@ -27,12 +27,13 @@
         dataType:"json",
         success:function(data) {
           for(var i=0;i<data.length;i++) {
-            var image = imagePath + data[i].Name + ".png";
-            var pos = {lat:data[i].Lat,lng:data[i].Lng};
+            var profile = imagePath + data[i].Name + ".png";
+            var place = "images/place/" + data[i].Name + ".png"
+	    var pos = {lat:data[i].Lat,lng:data[i].Lng};
             markers[i] = new google.maps.Marker({
               position: pos,
               map: map,
-              icon: image,
+              icon: profile,
               id: i
             });
             markers[i].addListener('click', function(){
@@ -43,7 +44,8 @@
 
             infoWindow[i] = new google.maps.InfoWindow({
               content : '<div id="name_headline" style="color: #82888a;">' + 
-                data[i].Name +
+                '<img src="' + place + '" height="200" width="200">' + 
+	        data[i].Name +
                 "</div>" +
                 '<div id="location">' + 
                 data[i].Location + 
