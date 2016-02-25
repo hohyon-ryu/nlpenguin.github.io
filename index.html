@@ -43,21 +43,19 @@
             });
 
             infoWindow[i] = new google.maps.InfoWindow({
-              content :
-		'<div style="width: 400px; margin: 20px 0 10px 20px;">' + 
-                  '<div>' + 
-                    '<img src="' + place + 'style="width: 100%;"' + 
-		  '</div>' + 
-                  '<div id="name_headline" style="color: #82888a;">' + 
-	             data[i].Name +
-                  "</div>" +
-                  '<div id="location">' + 
-                    data[i].Location + 
-                  "</div>" + 
-                  '<div id="description" style="color: #565a5c;">' + 
-                     data[i].Description + 
-                  "</div>" + 
-                '</div>
+              content : 
+                '<div style="width: 400px; margin: 20px 0 10px 20px;">' + 
+                '<div><img src="' + place + '" style="width: 100%;"></div>' + 
+                '<div id="name_headline" style="font-weight: bold; font-size: 1.2em; margin: 0.4em 0 0.2em;">' + 
+	        data[i].Name +
+                "</div>" +
+                '<div id="location" style="margin-bottom: 0.4em;">' + 
+                data[i].Location + 
+                "</div>" + 
+                '<div id="description" style="color: #565a5c;">' + 
+                data[i].Description + 
+                "</div>" +
+                '</div>',
 		maxWidth : 280,
                 maxHeight : 243,
             });
