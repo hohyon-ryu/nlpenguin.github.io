@@ -21,7 +21,7 @@
 
       var imagePath = "images/profile/64x64/";
       var markers = [];
-      var infoWindow = []; 
+      var infoWindow = [];
       $.ajax({
         url:"resources/data.json",
         dataType:"json",
@@ -43,18 +43,18 @@
             });
 
             infoWindow[i] = new google.maps.InfoWindow({
-              content : 
-                '<div>' + 
-                '<img src="' + place + '" height="160" width="250">' + 
-		'</div>' + 
-                '<div id="name_headline" style="color: #82888a;">' + 
+              content :
+                '<div>' +
+                '<img src="' + place + '" height="160" width="250">' +
+		'</div>' +
+                '<div id="name_headline" style="color: #82888a;">' +
 	        data[i].Name +
                 "</div>" +
-                '<div id="location">' + 
-                data[i].Location + 
-                "</div>" + 
-                '<div id="description" style="color: #565a5c;">' + 
-                data[i].Description + 
+                '<div id="location">' +
+                data[i].Location +
+                "</div>" +
+                '<div id="description" style="color: #565a5c;">' +
+                data[i].Description +
                 "</div>",
 		maxWidth : 280,
                 maxHeight : 243,
