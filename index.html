@@ -28,7 +28,7 @@
         success:function(data) {
           for(var i=0;i<data.length;i++) {
             var profile = imagePath + data[i].Name + ".png";
-            var place = "images/place/" + data[i].Name + ".png"
+            var place = "images/place/" + data[i].Name + ".jpg"
 	    var pos = {lat:data[i].Lat,lng:data[i].Lng};
             markers[i] = new google.maps.Marker({
               position: pos,
