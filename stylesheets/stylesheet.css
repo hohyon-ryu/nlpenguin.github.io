@@ -88,6 +88,10 @@ a {
     width:2.75rem;
   }}
 
+.belo {
+  vertical-align: bottom;
+}
+
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
