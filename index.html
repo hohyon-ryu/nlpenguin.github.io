@@ -66,6 +66,22 @@
       }
     });
   }
+
+  $(document).ready(function () {
+
+    // you want to enable the pointer events only on click;
+
+    $('#map').addClass('scrolloff'); // set the pointer events to none on doc ready
+    $('.container').on('click', function () {
+      $('#map').removeClass('scrolloff'); // set the pointer events true on click
+    });
+
+    // you want to disable pointer events when the mouse leave the canvas area;
+
+    $(".container").mouseleave(function () {
+      $('#map').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+    });
+  });
   </script>
   <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABG80SflOUni_QkK41Yxqd0p43BQKmNXE&callback=initMap">
@@ -74,14 +90,18 @@
     <section class="page-header">
       <img class="belo" src="images/airbnb_vertical_lockup_white.png">
       <h1 class="project-name">Belong Anywhere...</h1>
+      <BR>
+      <img src="images/group_photo.jpg"><BR>
       <h2 class="project-tagline">The 42 new hires of 2/22/16 share the places where they feel belong. </h2>
     </section>
     <div class="container" style="margin:0px 0px;">
       <div id="map" style="height:700px;"></div>
     </div>
     <section class="site-footer">
-      <B>2/22 New-hire Challenge Team</B><BR>
-      Amanda Vawter | Ankit Argawal | Chase Munson | Jeremy Huang | John Bodley | Logan ury | Phil Nachum | Ram Sundarkumar | Will Ryu
+      <div class="site-footer-credits">
+        <B>2/22 New-hire Challenge Team</B><BR>
+        Amanda Vawter | Ankit Argawal | Chase Munson | Jeremy Huang | John Bodley | Logan ury | Phil Nachum | Ram Sundarkumar | Will Ryu
+      </div>
     </section>
   </body>
 </html>
