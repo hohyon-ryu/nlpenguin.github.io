@@ -39,6 +39,7 @@
           markers[i].addListener('click', function () {
             var marker = markers[this.id];
             marker.setAnimation(google.maps.Animation.BOUNCE);
+            map.setZoom(6);
             setTimeout(function () {
               marker.setAnimation(null);
             }, 2250);
