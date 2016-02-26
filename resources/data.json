@@ -278,5 +278,12 @@
     "Description": "Nanjing is my hometown and it is one of the oldest cities in China, served as the country’s capital through six different dynasties. The Lanterns Fair along the Qinhuai River is really unforgettable.",
     "Lat": 32.060255,
     "Lng": 118.796877
+  },
+  {
+    "Name": "Jieying Chen",
+    "Location": "Shanghai, China",
+    "Description": "multi-culture, food, childhood memories of the city.",
+    "Lat": 31.230416,
+    "Lng": 121.473701
   }
 ]
