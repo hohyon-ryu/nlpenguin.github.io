@@ -227,8 +227,9 @@
     "Name": "Phillip Cohen",
     "Location": "Angel Fire, NM",
     "Description": "My family meets up here every year.",
-    "Lat":36.3930879,
-    "Lng":-105.2850091},
+    "Lat": 36.3930879,
+    "Lng": -105.2850091
+  },
   {
     "Name": "Edwin Hwang",
     "Location": "Pittsburgh, PA",
@@ -265,10 +266,17 @@
     "Lng": -123.4544532
   },
   {
-    "Name": "Ramsundar Sundarkumar",
-    "Location": "Hyderabad, India",
-    "Description": "I am from Hyderabad in India. I have spent most of my life there. I really like the culture of the city. There are places like Charminar and dishes like Chicken Biryani that you should no miss when you visit the city. ",
-    "Lat": 17.385044,
-    "Lng": 78.486671
+    "Name": "Siyuan Zhou",
+    "Location": "Urumqi, China",
+    "Description": "I was born and raised in Urumqi. Instead of saying I learnt a lot, I'd rather say this city gave me the characteristics I have: honesty and braveness.",
+    "Lat": 43.825592,
+    "Lng": 87.616848
+  },
+  {
+    "Name": "Tong Wei",
+    "Location": "Nanjing, China",
+    "Description": "Nanjing is my hometown and it is one of the oldest cities in China, served as the country’s capital through six different dynasties. The Lanterns Fair along the Qinhuai River is really unforgettable.",
+    "Lat": 32.060255,
+    "Lng": 118.796877
   }
 ]
