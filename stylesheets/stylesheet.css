@@ -264,7 +264,8 @@ a {
   width: 250px;
   margin: 20px 0 10px 20px;
   display: inline-block;
-  vertical-align: top
+  vertical-align: top;
+  text-align:left;
 }
 #contents {
   text-align:center;
