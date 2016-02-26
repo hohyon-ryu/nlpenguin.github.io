@@ -53,8 +53,9 @@
               '<img src="' + place + '" style="width: 100%"' +
               '</div>' +
               '<div id="name_headline" style="color: #82888a;">' +
+              '<a href="https://one.airbnb.com/people/' + data[i].Name.replace(" ", "_") + '">' +
               data[i].Name +
-              "</div>" +
+              "</a></div>" +
               '<div id="location" style="color: #ff5a5f" >' +
               data[i].Location +
               "</div>" +
@@ -64,7 +65,7 @@
               "</div>";
 
           infoWindow[i] = new google.maps.InfoWindow({
-            content:content,
+            content: content,
             maxWidth: 280,
             maxHeight: 243,
           });

@@ -10,7 +10,8 @@ body {
   color: #606c71; }
 
 a {
-  color: #1e6bb8;
+  color: #606c71;
+  font-weight: bold;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -55,6 +56,7 @@ a {
 
 .page-header {
   color: #fff;
+
   text-align: center;
   background-color: #159957;
   background-image: linear-gradient(120deg, #ff5a5f, #ff5a5f); }
@@ -191,6 +193,7 @@ a {
   .main-content table th, .main-content table td {
     padding: 0.5rem 1rem;
     border: 1px solid #e9ebec; }
+
 .main-content dl {
   padding: 0; }
   .main-content dl dt {
